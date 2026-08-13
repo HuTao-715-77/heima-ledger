@@ -1,0 +1,59 @@
+{
+  "name": "heima-ledger",
+  "productName": "黑马记账",
+  "version": "0.1.0",
+  "description": "黑马记账 - 个人记账桌面应用（Windows / Mac）",
+  "main": "./out/main/index.js",
+  "author": "heima",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist:win": "electron-vite build && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.heima.ledger",
+    "productName": "黑马记账",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": ["out/**/*", "!node_modules/**/*"],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "黑马记账",
+      "artifactName": "黑马记账-安装程序-v${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "png-to-ico": "^3.0.2",
+    "vite": "^7.3.6"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "echarts": "^6.1.0",
+    "element-plus": "^2.14.4",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "allowScripts": {
+    "electron@43.4.0": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "better-sqlite3@13.0.3": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

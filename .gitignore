@@ -1,0 +1,20 @@
+# 依赖（可随时 npm install 重新生成）
+node_modules/
+
+# 构建产物（out/ 是打包中间产物，dist/ 是安装包）
+out/
+dist/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器/个人配置
+.idea/
+.vscode/
+*.local
+.claude/settings.local.json
